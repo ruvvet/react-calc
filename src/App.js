@@ -1,23 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+
+
+
+  const [firstNum, setFirstNum] = useState();
+  const [secondNum, setSecondNum] = useState();
+  const [add, setAdd] = useState(0);
+
+ const addNumbers = () => {
+    setAdd(parseInt(firstNum) + parseInt(secondNum));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+
+
+
+      <h1>{add}</h1>
+      <input
+        name="firstNum"
+        type="number"
+        value={firstNum}
+        onChange={(evt) => setFirstNum(evt.target.value)}
+        placeholder="#"
+      ></input>
+      <input
+        name="secondNum"
+        type="number"
+        value={secondNum}
+        onChange={(evt) => setSecondNum(evt.target.value)}
+        placeholder="#"
+      ></input>
+      <button onClick={addNumbers}>ADD</button>
     </div>
   );
 }
