@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './calculator.css';
 import { Parser } from 'expr-eval';
 import Display from './components/Display';
 import Numbers from './components/Numbers';
-import Opeartors from './components/Operators';
+import Operators from './components/Operators';
 import React, { useState } from 'react';
 import Operators from './components/Operators';
 

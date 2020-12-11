@@ -17,9 +17,6 @@ function App() {
   return (
     <div>
 
-
-
-
       <h1>{add}</h1>
       <input
         name="firstNum"
