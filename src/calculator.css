@@ -1,52 +1,139 @@
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content:center;
-    margin-top: 1%;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
+body{
+    background: #121212;
+}
 
+.container {
+  width: 98vw;
+  height: 98vh;
+text-align: center;
+display: flex;
+justify-content:center;
+margin: 0 auto;
+  margin-top: 2%;
+  font-family: 'Open Sans Condensed', sans-serif;
 
 }
 
-.calculator{
 
-    width: 700px;
-    height: 700px;
-    display: block flex;
-    justify-content:center;
-    align-items: center;
-    /* background: #212121; */
+.calculator {
+  width: 30%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.7fr;
+  grid-template-rows: 0.3fr 0.2fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    'display display display display'
+    'specialfunc specialfunc specialfunc specialfunc'
+    'num num num operators';
+  font-family: 'Open Sans Condensed', sans-serif;
+  border: 10px solid white;
+
+  /* background: #212121; */
 }
 
-.final{
-
-    display: inline flex;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: stretch;
-    flex-flow: column wrap;
-    height: 100%;
-    width: 100%;
-
+.display {
+  grid-area: display;
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+  width: 100%;
+  background: #FFFFFF50;
+  text-align: right;
+  color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 7rem;
+}
+.specialfunc {
+  grid-area: specialfunc;
+  width: 100%;
 }
 
-.final button{
-    background-color:rgb(63, 133, 66);
-    color: white;
-    border: none;
-    flex: 1 1 0;
-    width: 50%;
-    height: 20%;
-    font-size: 20px;
-    transition-duration: 0.5s;
+.specialfunc button {
+  background-color: #dedede;
+  border: 2px solid #00000050;
 
 
+  width: 33%;
+  height: 100%;
+  font-size: 2rem;
+  transition-duration: 0.5s;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.final button:hover{
-    background-color: #dedede50;
-    color: black;
+.specialfunc button:hover {
+  background-color: #dedede50;
+  color: black;
+}
 
+.operators {
+  grid-area: operators;
+  width: 100%;
+}
+.num {
+  grid-area: num;
+  width: 100%;
+  display: inline flex;
+  justify-content: space-evenly;
 
+  align-content: stretch;
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
+  height: 100%;
+  width: 100%;
+}
+
+.num button {
+  background-color: rgb(255, 255, 255);
+
+  border: 2px solid #dedede;
+
+  width: 33.3%;
+  height: 25%;
+  font-size: 2rem;
+  transition-duration: 0.5s;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.num button:hover {
+  background-color: #dedede;
+  color: black;
+}
+
+.num .zero {
+  width: 66.6%;
+}
+
+.num .dot {
+  width: 33.3%;
+}
+
+.operators {
+  position: relative;
+  width: 100%;
+  display: block flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  flex-flow: row wrap;
+}
+
+.operators button {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: rgb(255, 167, 5);
+  border: 2px solid #dedede;
+
+  flex: 1 1 0;
+  width: 100%;
+  height: 20%;
+  font-size: 2rem;
+  transition-duration: 0.5s;
+  margin: 0 auto;
+}
+
+.operators button:hover {
+  background-color: #dedede;
+  color: black;
 }

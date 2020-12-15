@@ -1,6 +1,6 @@
 import './numbers.css';
 
-export default function Numbers({handleClick}) {
+export default function Numbers({ handleClick }) {
   const numbers = [];
 
   for (let i = 1; i < 10; i++) {
@@ -15,5 +15,26 @@ export default function Numbers({handleClick}) {
     );
   }
 
-  return <div class="number-wrapper">{numbers}</div>;
+  return (
+    <div class="num">
+      {numbers}
+      <button
+        className="zero"
+        onClick={() => {
+          handleClick(0);
+        }}
+      >
+        0
+      </button>
+
+      <button
+        className="dot"
+        onClick={() => {
+          handleClick('.');
+        }}
+      >
+        .
+      </button>
+    </div>
+  );
 }
