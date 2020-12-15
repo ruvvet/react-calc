@@ -32,39 +32,35 @@ function Calculator() {
     setNewNumber('');
   };
 
-  const posneg = (value)=>{
-    if (value==='-'){
+  const posneg = (value) => {
+    if (value === '-') {
       setDisplay(`${value}${display}`);
-    }else{
+    } else {
       setDisplay(`${display.slice(1, display.length)}`);
     }
+  };
 
-  }
-
-
-  const modulo = ()=>{
-    setDisplay(`${display/100}`);
-  }
-
-
-
-
-
+  const modulo = () => {
+    setDisplay(`${display / 100}`);
+  };
 
   return (
-
     <div class="container">
-
       <div class="calculator">
         <Display className="display" display={display} />
-        <SpecialFunc className="specialfunc" clear={clear} display={display} posneg={posneg} modulo={modulo}/>
+        <SpecialFunc
+          className="specialfunc"
+          clear={clear}
+          display={display}
+          posneg={posneg}
+          modulo={modulo}
+        />
         <Numbers className="num" handleClick={handleNumClick} />
         <Operators
           className="operators"
           handleClick={handleOperatorClick}
           calculate={calculate}
         />
-
       </div>
 
       {/* // <div>
@@ -73,7 +69,6 @@ function Calculator() {
     //   <Operators handleClick={handleOperatorClick} />
     //   <button onClick={calculate}>=</button>
     // </div> */}
-
     </div>
   );
 }
